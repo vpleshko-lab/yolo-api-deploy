@@ -41,8 +41,8 @@ def predict_and_show(img_path):
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     h, w = img_rgb.shape[:2]
-    font_scale = max(0.5, min(1.5, w / 2050))
-    line_thickness_text = max(1, int(round(min(h, w) / 500)))
+    font_scale = max(0.5, min(1.5, w / 1800))
+    line_thickness_text = max(2, int(round(min(h, w) / 500)))
     line_thickness = max(1, int(round(min(h, w) / 300)))
 
     results = model(img)
