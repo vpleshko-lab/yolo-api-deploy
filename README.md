@@ -43,4 +43,4 @@ yolo-api-deploy/
     └── example.jpg
 ```
 ## Приклад зображення
-![Example](projects/yolo-api-deploy/examples/yolov8_result.png)
+![Example](examples/yolov8_result.png)
