@@ -34,9 +34,11 @@ http://127.0.0.1:8000/docs
 curl -X POST "http://127.0.0.1:8000/predict" -F "file=@path/to/image.jpg"
 ```
 ## Структура проєкту
+```css
 yolo-api-deploy/
 ├── main.py # --> основний файл
 ├── requirements.txt # --> залежності
 ├── README.md # --> опис проєкту
 └── examples/ # --> приклади результатів
     └── example.jpg
+```
