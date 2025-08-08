@@ -43,5 +43,4 @@ yolo-api-deploy/
     └── example.jpg
 ```
 ## Приклад зображення
-![Input Example](/Users/vladislavpleshko/Downloads/180-camera-IR-night-vision.jpg)
-![Predicted Example](/Users/vladislavpleshko/Documents/VS Code/projects/yolo-api-deploy/examples/yolov8_result.png)
+![Example](projects/yolo-api-deploy/examples/yolov8_result.png)
