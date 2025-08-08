@@ -14,9 +14,39 @@ import traceback
 
 model = YOLO('yolov8x.pt')
 
-def predict_and_show(img_path):
+def predict_and_show(img_path: str) -> list:
+    """
+    Виконує детекцію об'єктів на зображенні за допомогою моделі YOLOv8,
+    виводить зображення з bounding boxes і повертає список детекцій у форматі словника.
 
-    def read_image(img_path):
+    Args:
+        img_path (str): Шлях до локального зображення або URL.
+
+    Returns:
+        list: Список детекцій, кожна — словник з ключами:
+              'class_id', 'class_name', 'confidence', 'bbox' (координати).
+    """
+
+    def read_image(img_path: str):
+        """
+        Завантажує зображення з локального шляху або URL.
+
+        Логіка:
+        1. Якщо файл існує локально, намагається його відкрити.
+        2. Якщо локального файлу немає, завантажує зображення за URL.
+        3. Конвертує байти у формат зображення OpenCV.
+
+        Args:
+            img_path (str): Шлях до локального файлу або URL.
+
+        Raises:
+            ValueError: Якщо файл знайдено, але його не вдалося відкрити.
+            ValueError: Якщо не вдалося завантажити зображення за URL.
+            ValueError: Якщо дані не є валідним зображенням.
+
+        Returns:
+            numpy.ndarray: Зображення у форматі BGR (OpenCV).
+        """
         # 1. Перевірка, чи існує файл локально
         if os.path.exists(img_path):
             img = cv2.imread(img_path)
@@ -55,7 +85,7 @@ def predict_and_show(img_path):
         xyxy = box.xyxy[0].tolist()
         name = str(model.names[cls_id])
 
-        # колір залежно від впевненості
+        # колір bbox залежно від впевненості
         r = int((1 - conf) * 255)
         g = int(conf * 255)
         color = (r, g, 0)
@@ -90,11 +120,18 @@ def predict_and_show(img_path):
 app = FastAPI()
 
 @app.post('/predict')
-async def predict(
-    file: Optional[UploadFile] = File(None),
-    url: Optional[str] = Form(None)
-    ):
+async def predict(file: Optional[UploadFile] = File(None), url: Optional[str] = Form(None)):
+    """
+    Обробляє POST-запит для детекції об'єктів на зображенні.
+    Можна надіслати файл зображення або URL.
 
+    Args:
+        file (UploadFile, optional): Завантажений файл зображення.
+        url (str, optional): URL зображення.
+
+    Returns:
+        JSON: Результати детекції у форматі JSON.
+    """
     temp_file = None
 
     try:
