@@ -15,7 +15,7 @@ API приймає на вхід зображення або URL, виконує
 ## Встановлення (Installation)
 
 ```bash
-git clone https://github.com/твій_логін/yolo-api-deploy.git
+git clone https://github.com/vpleshko-lab/yolo-api-deploy.git
 cd yolo-api-deploy
 pip install -r requirements.txt
 ```
