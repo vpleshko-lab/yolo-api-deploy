@@ -53,7 +53,7 @@ yolo-api-deploy/
 
 ```
 ## Приклад зображення
-![Example](screenshot/yolov8_result.png)
+![Example](screenshots/yolov8_result.png)
 
 ###  Логи запуску
 ![Logs](screenshots/deploy_logs.png)
