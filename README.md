@@ -40,6 +40,20 @@ http://127.0.0.1:8000/docs
 ```bash
 curl -X POST "http://127.0.0.1:8000/predict" -F "file=@path/to/image.jpg"
 ```
+## Створення образу Docker
+Знаходячись у корені проєкту виконай у терміналі:
+```bash
+docker build -t my_image_name .
+```
+---
+### Як запускати контейнер
+Запуск за замовчуванням:
+```bash
+docker run --rm my_image_name # із автоматичним видаленням контейнеру після завершення
+docker run my_image_name # простий запуск
+```
+---
+
 ## Структура проєкту
 ```css
 yolo-api-deploy/
