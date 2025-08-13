@@ -71,13 +71,13 @@ docker build -t my_image_name .
 
 ```bash
 # Запуск основного API
-docker run -p 8000:8000 yolo-api-docker:0.3
+docker run -p 8000:8000 my_image_name
 
 # Запуск іншого Python-скрипта (інші відсутні)
-docker run yolo-api-docker:0.3 app/test_script.py
+docker run my_image_name app/test_script.py
 
 # Інтерактивна сесія Python
-docker run -it yolo-api-docker:0.3 python
+docker run -it my_image_name python
 ```
 
 Далі перейди у браузері:
