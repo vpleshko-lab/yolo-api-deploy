@@ -1,8 +1,15 @@
-fastapi
-uvicorn
-ultralytics
-opencv-python
-numpy
-matplotlib
-requests
-python-multipart
+# Web framework
+fastapi==0.115.12
+uvicorn==0.34.3
+python-multipart==0.0.20
+
+# ML / Computer Vision
+ultralytics==8.3.169
+torch==2.2.2
+torchvision==0.17.2
+
+# Utilities
+opencv-python==4.11.0.86
+numpy==1.26.4
+matplotlib==3.9.2
+requests==2.32.4
