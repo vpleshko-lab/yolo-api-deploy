@@ -46,13 +46,11 @@ git clone https://github.com/vpleshko-lab/yolo-api-deploy.git
 cd yolo-api-deploy
 pip install -r requirements.txt
 ```
-
 ---
 ## Запуск (локально)
 ```bash
 uvicorn main:app --reload
 ```
----
 Відкрий у браузері:
 
 ```plaintext
@@ -63,13 +61,12 @@ http://127.0.0.1:8000/docs
 ```bash
 curl -X POST "http://127.0.0.1:8000/predict" -F "file=@path/to/image.jpg"
 ```
-
+---
 ## Створення образу Docker
 Знаходячись у корені проєкту виконай у терміналі:
 ```bash
 docker build -t my_image_name .
 ```
----
 ### Як запускати Docker контейнер
 
 ```bash
