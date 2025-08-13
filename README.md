@@ -70,7 +70,14 @@ docker build -t my_image_name .
 ### Як запускати Docker контейнер
 
 ```bash
+# Запуск основного API
 docker run -p 8000:8000 yolo-api-docker:0.3
+
+# Запуск іншого Python-скрипта (інші відсутні)
+docker run yolo-api-docker:0.3 app/test_script.py
+
+# Інтерактивна сесія Python
+docker run -it yolo-api-docker:0.3 python
 ```
 
 Далі перейди у браузері:
