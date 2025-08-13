@@ -49,7 +49,7 @@ pip install -r requirements.txt
 ---
 ## Запуск (локально)
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 Відкрий у браузері:
 
