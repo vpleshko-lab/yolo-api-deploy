@@ -57,7 +57,7 @@ uvicorn main:app --reload
 http://127.0.0.1:8000/docs
 ```
 
-## Приклад використання (curl):
+### Приклад використання (curl):
 ```bash
 curl -X POST "http://127.0.0.1:8000/predict" -F "file=@path/to/image.jpg"
 ```
@@ -84,8 +84,8 @@ http://localhost:8000/docs
 
 ###  Логи запусків
 ![Запуск локально](screenshots/deploy_logs.png)
-Побудова образу Docker
+#### Побудова образу Docker
 ![Docker build](screenshots/docker_build.png)
-Запуски контейнеру
+#### Запуски контейнеру
 ![Docker RUN](screenshots/docker_run_01.png)
 ![Docker RUN (JSON output)](screenshots/docker_run_02.png)
